@@ -50,7 +50,7 @@ const toCsv = (matrix) => matrix.map((row) => row.join(',')).join('\n') + '\n';
 
 const processCsv = (filename) => {
   console.log('reading', filename);
-  let contents = fs.readFileSync(path.join(process.cwd(), filename), 'utf8');
+  let contents = fs.readFileSync(filename, 'utf8');
   contents = contents.replace(/\r/g, '');
   const lines = contents.split('\n');
   const promises = [];
@@ -113,7 +113,8 @@ const processCsv = (filename) => {
   })
 }
 
-const filename = process.argv[2];
+let filename = process.argv[2];
+filename = path.resolve(filename.replace(/~/, process.env.HOME));
 if (!filename) return console.error('You must specify a filename');
 
 processCsv(filename);
