@@ -1,0 +1,12 @@
+{
+  "name": "influencers-unite-fix-csv",
+  "version": "1.0.0",
+  "description": "run this tool to fix your csv",
+  "main": "getfollowers.js",
+  "dependencies": {
+    "placename": "^1.0.1"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
